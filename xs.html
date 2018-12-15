@@ -1,0 +1,20 @@
+<h1>You have to make an alert box like this; with one user click</h1>
+<p>Note (This might not work in Internet Explorer & Edge Browsers)</p>
+
+<script>
+
+var jjk=document.referrer;
+var jjax= jjk.split('?').pop();
+var jja = decodeURIComponent(jjax);
+
+if(!/((\r\n|\r|\n).*$)/i.test(jja)){
+if(!/(script.*$)/i.test(jja)){
+if(!/(src.*$)/i.test(jja)){
+if(!/(alert.*$)/i.test(jja)){
+if(!/(on.*$)/i.test(jja)){
+
+document.write(jja);
+
+}}}}}
+
+</script>
