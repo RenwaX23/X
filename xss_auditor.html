@@ -1,0 +1,36 @@
+<h2>Detect Chrome XSS Auditor Using &lt;portal&gt;</h2>
+Tested on Canary v76.0.3794.0<br>
+Don't forget to enable portals (chrome://flags/#enable-portals)<br>
+When the &lt;portal&gt; loads a normal page we will get one onload event but when the xss auditor triggers we will get 2 onload events<br>
+There is other good techniques for detecting the auditor by @garethheyes and @cgvwzq
+<script>
+var j =0;
+</script>
+<br><br>
+<input id=n size=100><button onclick="j=0;go()">Check</button>
+<h1><h1>
+
+<script>
+function go(){
+portal = document.createElement('portal');
+portal.src = document.getElementById('n').value;
+var att = document.createAttribute("onload")
+att.value = 'j+=1; lol();';
+portal.setAttributeNode(att);
+document.body.appendChild(portal);
+}
+
+function lol(){
+if(j==2){
+document.getElementsByTagName('h1')[0].style="color:red";
+document.getElementsByTagName('h1')[0].innerHTML=
+"Blocked by XSS Auditor";
+}
+else{
+document.getElementsByTagName('h1')[0].style="color:green";
+document.getElementsByTagName('h1')[0].innerHTML=
+"Loaded Correctly";
+}
+}
+</script>
+<!-- This is just a silly view POC, don't expect any exploitations using this code -->
