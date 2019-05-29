@@ -1,0 +1,43 @@
+<style>
+body{color:#14171a;background:#e6ecf0}#_plain{width:100%;height:100%}#_code{width:100%;height:100%}#_convert{position:absolute;top:15px;right:15px;opacity:.6;cursor:pointer}textarea{padding:10px}button{height:30px}#_eval{position:absolute;top:50px;right:15px;opacity:.6;cursor:pointer}table{width:100%;height:calc(100vh - 300px)}table td{position:relative;padding:10px}.title h1{font-size:60px}.title h1,.title p{text-align:center}.title p{font-style:italic;font-size:20px}
+</style>
+<div class=title>
+<p>Convert JavaScript functions into ES6 Unicode</p>
+</div>
+        
+<table>
+<tr>
+<td>
+<textarea id=_plain>alert(23)</textarea>
+<button onclick="\u{78}()" id=_convert>convert</button>
+<button onclick="\u{78}();\u{6a}()" id=_eval>convert & eval</button>
+</td>
+<td>
+<textarea id=_code></textarea>
+</td>
+</tr>
+</table>
+        
+<script>
+function \u{78}(){
+\u{64}\u{6f}\u{63}\u{75}\u{6d}\u{65}\u{6e}\u{74}.\u{67}\u{65}\u{74}\u{45}\u{6c}\u{65}\u{6d}\u{65}\u{6e}\u{74}\u{73}\u{42}\u{79}\u{54}\u{61}\u{67}\u{4e}\u{61}\u{6d}\u{65}('\u{70}')[1].\u{69}\u{6e}\u{6e}\u{65}\u{72}\u{54}\u{65}\u{78}\u{74}="";
+var \u{73}=\u{64}\u{6f}\u{63}\u{75}\u{6d}\u{65}\u{6e}\u{74}.\u{67}\u{65}\u{74}\u{45}\u{6c}\u{65}\u{6d}\u{65}\u{6e}\u{74}\u{73}\u{42}\u{79}\u{54}\u{61}\u{67}\u{4e}\u{61}\u{6d}\u{65}('\u{74}\u{65}\u{78}\u{74}\u{61}\u{72}\u{65}\u{61}')[0].\u{76}\u{61}\u{6c}\u{75}\u{65};
+var \u{79} ="";
+for(var \u{6a}=0;\u{6a}<\u{73}.\u{6c}\u{65}\u{6e}\u{67}\u{74}\u{68};\u{6a}++){
+if(\u{73}.\u{63}\u{68}\u{61}\u{72}\u{41}\u{74}(\u{6a}).\u{6d}\u{61}\u{74}\u{63}\u{68}(/^[A-Za-z]+$/))
+y+="\\\u{75}{"+\u{73}.\u{63}\u{68}\u{61}\u{72}\u{43}\u{6f}\u{64}\u{65}\u{41}\u{74}(\u{6a}).\u{74}\u{6f}\u{53}\u{74}\u{72}\u{69}\u{6e}\u{67}(16)+"}";
+else
+y+=\u{73}.\u{63}\u{68}\u{61}\u{72}\u{41}\u{74}(\u{6a});
+}
+\u{64}\u{6f}\u{63}\u{75}\u{6d}\u{65}\u{6e}\u{74}.\u{67}\u{65}\u{74}\u{45}\u{6c}\u{65}\u{6d}\u{65}\u{6e}\u{74}\u{73}\u{42}\u{79}\u{54}\u{61}\u{67}\u{4e}\u{61}\u{6d}\u{65}('\u{74}\u{65}\u{78}\u{74}\u{61}\u{72}\u{65}\u{61}')[1].\u{76}\u{61}\u{6c}\u{75}\u{65}=\u{79};
+}
+
+function \u{6a}(){
+\u{65}\u{76}\u{61}\u{6c}(\u{64}\u{6f}\u{63}\u{75}\u{6d}\u{65}\u{6e}\u{74}.\u{67}\u{65}\u{74}\u{45}\u{6c}\u{65}\u{6d}\u{65}\u{6e}\u{74}\u{73}\u{42}\u{79}\u{54}\u{61}\u{67}\u{4e}\u{61}\u{6d}\u{65}('\u{74}\u{65}\u{78}\u{74}\u{61}\u{72}\u{65}\u{61}')[1].\u{76}\u{61}\u{6c}\u{75}\u{65});
+\u{77}\u{69}\u{6e}\u{64}\u{6f}\u{77}.\u{6f}\u{6e}\u{65}\u{72}\u{72}\u{6f}\u{72} = function (\u{6d}\u{73}\u{67}, \u{75}\u{72}\u{6c}, \u{6c}\u{69}\u{6e}\u{65}) {
+\u{64}\u{6f}\u{63}\u{75}\u{6d}\u{65}\u{6e}\u{74}.\u{67}\u{65}\u{74}\u{45}\u{6c}\u{65}\u{6d}\u{65}\u{6e}\u{74}\u{73}\u{42}\u{79}\u{54}\u{61}\u{67}\u{4e}\u{61}\u{6d}\u{65}('\u{70}')[1].\u{69}\u{6e}\u{6e}\u{65}\u{72}\u{54}\u{65}\u{78}\u{74}=\u{6d}\u{73}\u{67};}
+}
+
+</script>
+<p style="color: red"></p>
+<!-- Template stolen from @terjanq ;-) -->
