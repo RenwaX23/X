@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.getCookie = function(name) {
+  var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+}
+</script>
+<style>
+div{ border-style: dashed; border-width: 5px; margin: 70px; padding: 20px; } h1{ font-family:"Comic Sans MS"; color:blue; display: inline; } #user{ color:magenta; } 
+</style>
+</head>
+
+<body>
+
+<center><br><br><br><br>
+<div>
+<h1>Type your username to login</h1></h1><br>
+<br><input id=useri>&nbsp;<button id=btn onclick=setSession()>Login</button>
+<h3>
+<a href="index.html">Home</a>
+
+</h3>
+</div>
+</center>
+
+</body>
+<script>
+if(getCookie('session')){
+document.body.innerHTML='<h1>You are already logged in</h1>';
+}
+
+function setSession(){
+var username=document.getElementById('useri').value;
+document.cookie=`session=${username}`;
+
+document.getElementById('useri').value="";
+document.getElementById('btn').innerText="Done";
+
+}
+</script>
+</html>

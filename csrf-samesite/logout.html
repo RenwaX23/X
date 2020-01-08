@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.getCookie = function(name) {
+  var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+}
+</script>
+<style>
+div{ border-style: dashed; border-width: 5px; margin: 70px; padding: 20px; } h1{ font-family:"Comic Sans MS"; color:blue; display: inline; } #user{ color:magenta; } 
+</style>
+</head>
+
+<body>
+
+<center><br><br><br><br>
+<div>
+<h1 id=bye></h1></h1><br>
+<h3>
+<a href="index.html">Home</a>
+</h3>
+</div>
+</center>
+
+</body>
+<script>
+var user = getCookie('session');
+if(user){
+document.getElementById('bye').innerText=`Bye ${user}`;}
+else{
+document.getElementById('bye').innerText='Not logged in';
+}
+
+document.cookie="session=";
+
+
+</script>
+</html>

