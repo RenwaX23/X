@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+// Write view-source:// into the clipboard
+async function copy() {
+  try {
+    await navigator.clipboard.writeText('view-source://');
+  } catch (err) {}
+}
+copy();
+
+// Setting timers and state
+let first=0;
+let last=0;
+let b=0;
+
+// Detecting when the user leaves the page
+var visibilityChange = (function (window) {
+    var inView = false;
+    return function (fn) {
+        window.onfocus = window.onblur = window.onpageshow = window.onpagehide = function (e) {
+            if ({focus:1, pageshow:1}[e.type]) {
+                if (inView) return;
+                fn("visible");
+                inView = true;
+				
+				if(first){
+				last = Math.round(Date.now()/1000);
+				}
+				
+				// If took more than 3 seconds to change states then its incognito
+				if(last-first>3){
+				x.style.color='red';
+				x.innerText=`You're in Incognito`
+				b=1;
+				}} 
+				
+				else if (inView) {
+                fn("hidden");
+                inView = false;
+				first = Math.round(Date.now()/1000);
+				setTimeout(function(){
+				x.style.color='blue';
+				x.innerText='Click on the document';
+				x.setAttribute("onclick", "if(!b){x.innerText='Not in Incognito';x.style.color='green'}");}
+				,2000);
+            }
+        };
+    };
+}(this));
+
+visibilityChange(function (state) {
+    console.log(state);
+});
+
+</script>
+
+<center><h1 id=x style="color:magenta;height:100vh;">Paste into the Address bar and press enter what you have copied</h1></center>
+</body>
+
+</html>
