@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{color:#14171a;background:#e6ecf0}#_plain{width:100%;height:100%}#_code{width:100%;height:100%}#_convert{position:absolute;top:15px;right:15px;opacity:.6;cursor:pointer}textarea{padding:10px}button{height:30px}#_eval{position:absolute;top:50px;right:15px;opacity:.6;cursor:pointer}table{width:100%;height:calc(100vh - 300px)}table td{position:relative;padding:10px}.title h1{font-size:60px}.title h1,.title p{text-align:center}.title p{font-style:italic;font-size:20px}
+</style>
+<div class=title>
+<p>Decode ES6 Unicode<br><a target=_blank href=https://renwax23.github.io/X/jsES6_unicode.html>Encoder</a></p>
+</div>
+<table>
+<tr>
+<td>
+<textarea id=_plain>\u{61}\u{6c}\u{65}\u{72}\u{74}(23)</textarea>
+<button onclick="x = _plain.value;r()" id=_convert>decode</button>
+</td>
+<td>
+<textarea id=_code></textarea>
+</td>
+</tr>
+</table>
+<script>
+
+String.prototype.hexDecode = function(){
+    var j;
+    var hexes = this.match(/.{1,4}/g) || [];
+    var back = "";
+    for(j = 0; j<hexes.length; j++) {
+        back += String.fromCharCode(parseInt(hexes[j], 16));
+    }
+
+    return back;
+}
+
+var x = x = _plain.value;
+let s= x.search('\\u{');
+
+function decode(){
+x=x.replace(/\\u{(.){2}}/, x.substr(x.search(/\\u{(.){2}}/g)+3,2).hexDecode() )
+}
+
+function r(){
+s= x.search('\\u{');
+
+while(s!=-1){
+decode();
+s= x.search('\\u{');
+_code.value=x
+}}
+
+</script>
+</html>
