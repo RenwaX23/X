@@ -3,8 +3,12 @@
 We (**Super Guesser**) got 3 unintended solutions
 
 **1.** Using heavy queries in SQL injection to sleep for a while then with window.open and performance.now() leak the flag character by character
+
 **2.** With SQL injection and dom clobbering+dangling markup redirect to /profile if the query was true then our profile will load an image to our webhook
+
 **3.** Dangling markup to spoof lastElement of the document then SQLi+ CSRF to leak the flag through /report
+
+---
 
 **1.** We can't use `<iframe>` because the cookie is SameSite but headless chrome allows window.open by default
 ```
