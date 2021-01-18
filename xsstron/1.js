@@ -1,1 +1,0 @@
-top.pingHost(1)
