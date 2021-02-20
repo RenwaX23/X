@@ -1,0 +1,37 @@
+<html>
+<body>
+<center>
+<br><br><br><h1 id=h style=color:blue>Press CTRL+SHIFT+T</h1>
+</center>
+
+<script>
+
+function KeyPress(e) {
+      var evtobj = window.event? event : e
+	  if(evtobj.ctrlKey){
+	  checkLeave();
+	  setTimeout(function(){
+	  if(state<1){h.style.color='red';h.innerText=('You\'re Incognito')}
+	  else{
+	  h.style.color='green';h.innerText=('Not Incognito')
+	  }
+	  },3000)
+	  }
+}
+
+var state =0;
+
+function checkLeave(){
+document.addEventListener("visibilitychange", event => {
+  if (document.visibilityState == "visible") {
+    null
+  } else {
+    state++;
+  }
+})
+}
+document.onkeydown = KeyPress;
+
+</script>
+</body>
+</html>
