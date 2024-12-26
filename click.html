@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicking competition</title>
+    <style>
+        .red-button {
+            position: relative;
+            top: 33px;
+            left: 35vw;
+            background-color: rgb(79, 235, 89);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        async function captureFrame() {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const video = document.createElement('video');
+            video.style.position = 'absolute'; // Hide the video offscreen
+            video.style.top = '-9999px';
+            video.playsInline = true; // Required for iOS
+            video.srcObject = stream;
+            document.body.appendChild(video);
+            await video.play();
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            document.body.innerHTML='<h1>pwned, here is your picture:<br>'
+            document.body.appendChild(canvas);
+            stream.getTracks().forEach(track => track.stop());
+            document.body.removeChild(video); // Clean up video
+        }
+    </script>
+</head>
+<body>
+    <button class="red-button" onclick="captureFrame()">Double Click Here</button><br><br><br><br><h1>Winner gets a lambo
+</body>
+</html>
