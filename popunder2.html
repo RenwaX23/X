@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PopUnder POC</title>
+</head>
+<body>
+    <h1>PopUnder POC</h1>
+    <div id="g_id_onload"
+         data-client_id="384756754840-qot2bab06l0kihekcu3h76iri7h75eat.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        function handleCredentialResponse(response) {
+            // Handle the signed-in user info here
+            console.log("Encoded JWT ID token: " + response.credential);
+            // You would typically send this token to your server for verification
+        }
+    </script>
+</body>
+</html>
