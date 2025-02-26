@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26feb2025-challenge</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        @keyframes rainbow {
+            0% { color: red; }
+            16% { color: orange; }
+            33% { color: yellow; }
+            50% { color: green; }
+            66% { color: blue; }
+            83% { color: indigo; }
+            100% { color: violet; }
+        }
+        marquee {
+            font-size: 28px;
+            font-weight: bold;
+            animation: rainbow 3s infinite linear;
+            margin-bottom: 20px;
+        }
+        iframe {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .solvers {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <marquee>escape the sandbox</marquee>
+    <script>
+        function getQueryParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+        
+        const htmlContent = getQueryParam('html');
+        if (htmlContent) {
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const blobUrl = URL.createObjectURL(blob);
+            
+            const iframe = document.createElement('iframe');
+            iframe.src = blobUrl;
+            iframe.sandbox = "";
+            document.body.appendChild(iframe);
+        } else {
+            document.body.innerHTML = "<p>No HTML content provided.</p>";
+        }
+    </script>
+    <div class="solvers">
+        <h2>Solvers:</h2>
+        <ul>
+            <li>You?</li>
+        </ul>
+    </div>
+</body>
+</html>
