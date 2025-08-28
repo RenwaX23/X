@@ -27,7 +27,7 @@ The oversized custom cursor overlaps the address bar and spoofs trusted origins 
 ---
 
 ## Video Proof-of-Concept  
-`IMG_1244.MOV`  
+[https://x.com/RenwaX23/status/1961123742110580767](https://x.com/RenwaX23/status/1961123742110580767)
 
 ---
 
