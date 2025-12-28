@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta property="og:image" content="https://rx23.io/gemstudio/gem.jpg">
+  <title>GEM Studio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <style>
+    #pdf-viewer {
+      width: 100%;
+      height: 100vh;
+      overflow: auto;
+      border: 1px solid #ccc;
+    }
+    canvas {
+      display: block;
+      margin: 10px auto;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="pdf-viewer"></div>
+
+  <script>
+    const url = 'decors.pdf'; // Your PDF file
+
+    const container = document.getElementById('pdf-viewer');
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    pdfjsLib.getDocument(url).promise.then(function (pdf) {
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        pdf.getPage(pageNum).then(function (page) {
+          const viewport = page.getViewport({ scale: 1.5 });
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+          container.appendChild(canvas);
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+          page.render(renderContext);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
