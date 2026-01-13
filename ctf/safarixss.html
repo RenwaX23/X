@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Safari Challenge</title>
+</head>
+<body>
+    <p>execute alert(origin) on this page</p>
+    <iframe id="win" src="https://example.com"></iframe>
+    <script>
+        setTimeout(() => {
+            try {
+                const url = document.getElementById('win').contentWindow.location.href;
+                if (!url.includes(location.origin) && !url.includes('blank')) {
+                    eval(document.getElementById('win').contentWindow.name);
+                }
+            } catch (e) {}
+        }, 1000);
+    </script>
+</body>
+</html>
