@@ -1,0 +1,10 @@
+{
+    "name": "reality_stone",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^5.1.0",
+        "jsdom": "^23.2.0",
+        "dompurify": "^3.3.0"
+    }
+}

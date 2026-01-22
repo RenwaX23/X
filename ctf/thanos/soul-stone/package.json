@@ -1,0 +1,8 @@
+{
+    "name": "soul_stone",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^5.1.0"
+    }
+}

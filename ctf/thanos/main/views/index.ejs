@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Intigriti December Challenge</title>
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@intigriti">
+		<meta name="twitter:creator" content="@intigriti">
+		<meta name="twitter:title" content="December Challenge - Intigriti">
+		<meta name="twitter:description" content="Find the FLAG and WIN Intigriti swag.">
+		<meta name="twitter:image" content="https://challenge-1225.intigriti.io/images/share.png">
+		<meta property="og:url" content="https://challenge-1225.intigriti.io">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="December Challenge - Intigriti">
+		<meta property="og:description" content="Find the FLAG and WIN Intigriti swag.">
+		<meta property="og:image" content="https://challenge-1225.intigriti.io/images/share.png">
+		<link nonce="<%= nonce %>" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+		<link nonce="<%= nonce %>" href="/css/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+
+	<body>
+		<section id="wrapper">
+			<section id="rules">
+				<div id="challenge-container" class="card-container">
+					<div class="card-header">
+						<img class="card-avatar" src="/images/creator.jpg" alt="creator">
+						Intigriti's December challenge by <a target="_blank" href="https://twitter.com/renwaX23">Renwa</a>
+					</div>
+					<div id="challenge-info" class="card-content">
+						<p>Find the FLAG and win Intigriti swag! 🏆</p>
+						<b>Rules:</b>
+						<ul>
+							<li>This challenge runs from 08/12/2025 1:00 PM until 15/12/2025, 11:59 PM UTC.</li>
+							<li>
+								Out of all correct submissions, we will draw <b>six</b> winners on Wednesday 17/12/2025:
+								<ul>
+									<li>Three randomly drawn correct submissions</li>
+									<li>Three best write-ups</li>
+								</ul>
+							</li>
+							<li>Every winner gets a €50 swag voucher for our <a href="https://swag.intigriti.com/"
+									target="_blank">swag shop</a></li>
+							<li>The winners will be announced on our <a href="https://twitter.com/intigriti"
+									target="_blank">Twitter profile</a>.</li>
+							<li>For every 100 likes, we'll add a tip to <a href="https://go.intigriti.com/challenge-tips"
+									target="_blank">announcement tweet</a>.</li>
+							<li>Join our <a href="https://go.intigriti.com/discord" target="_blank">Discord</a> to discuss
+								the challenge!</li>
+						</ul>
+						<b>The solution:</b>
+						<ul>
+                            <li>Should leverage a reflected XSS vulnerability on the challenge page (and not on any of its subdomains).</li>
+                            <li>Shouldn't be self-XSS or related to MiTM attacks.</li>
+                            <li>Should work in the latest version of Google Chrome.</li>
+                            <li>Should not require more than 1 click from the victim.</li>
+                            <li>Should include:</li>
+                            <ul>
+								<li>The flag in the format <code>INTIGRITI{.*}</code></li>
+                                <li>The payload(s) used</li>
+                                <li>Steps to solve (short description / bullet points)</li>
+                            </ul>
+                            <li>Should be reported on the <a href="https://app.intigriti.com/programs/intigriti/challenge1225/detail">Intigriti platform</a>.
+                            </li>
+                        </ul>
+                        <b>Get started:</b>
+                        <ol>
+                            <li>
+                                Download the <a href="/source.zip">challenge source code</a>, test your payloads on the <b><a href="/challenge">challenge page</a></b> & let's pop that alert!
+                            </li>
+                        </ol>
+					</div>
+				</div>
+				<div class="card-container">
+                    <a href="/challenge">
+					    <img src="/main.jpeg" width="100%" height="450px" />
+                    </a>
+               </div>
+			</section>
+		</section>
+	</body>
+</html>
